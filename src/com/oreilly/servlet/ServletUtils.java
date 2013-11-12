@@ -10,7 +10,7 @@ import java.net.*;
 import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.servlet.jsp.*;
+// import javax.servlet.jsp.*;
 
 /** 
  * A collection of static utility methods useful to servlets.
