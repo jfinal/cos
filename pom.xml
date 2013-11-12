@@ -4,7 +4,7 @@
 	<artifactId>cos</artifactId>
 	<packaging>jar</packaging>
 	<name>Cos</name>
-	<version>26Dec2008</version>
+	<version>26Dec2008-SNAPSHOT</version>
 	<url>http://jfinal.googlecode.com</url>
 	<description>Cos</description>
 	
