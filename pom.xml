@@ -4,8 +4,8 @@
 	<artifactId>cos</artifactId>
 	<packaging>jar</packaging>
 	<name>Cos</name>
-	<version>26Dec2008-SNAPSHOT</version>
-	<url>http://jfinal.googlecode.com</url>
+	<version>2017.5-SNAPSHOT</version>
+	<url>https://github.com/jfinal/cos</url>
 	<description>Cos</description>
 	
 	<properties>
@@ -31,8 +31,8 @@
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:git@github.com:jfinal/cos.git</connection>
-		<developerConnection>scm:git:git@github.com:jfinal/cos.git</developerConnection>
+		<connection>scm:git@github.com:jfinal/cos.git</connection>
+		<developerConnection>scm:git@github.com:jfinal/cos.git</developerConnection>
 		<url>git@github.com:jfinal/cos.git</url>
 	</scm>
 	
@@ -67,27 +67,6 @@
 	</dependencies>
 	
 	<build>
-		<sourceDirectory>${project.basedir}/src</sourceDirectory>
-		<testSourceDirectory>${project.basedir}/test</testSourceDirectory>
-
-		<resources>
-			<resource>
-				<directory>${project.basedir}/src</directory>
-				<filtering>false</filtering>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-		</resources>
-		<testResources>
-			<testResource>
-				<directory>${project.basedir}/test</directory>
-				<filtering>false</filtering>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</testResource>
-		</testResources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
