@@ -70,7 +70,8 @@ public class MultipartRequest {
   private static final int DEFAULT_MAX_POST_SIZE = 1024 * 1024;  // 1 Meg
 
   protected Hashtable parameters = new Hashtable();  // name - Vector of values
-  protected Hashtable files = new Hashtable();       // name - UploadedFile
+  // protected Hashtable files = new Hashtable();       // name - UploadedFile
+  protected FileTable files = new FileTable();       // name - UploadedFile
 
   /**
    * Constructs a new MultipartRequest to handle the specified request, 
