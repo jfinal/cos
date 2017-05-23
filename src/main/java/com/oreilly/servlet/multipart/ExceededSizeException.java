@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author <b>Jason Hunter</b>, Copyright &#169; 2007
  * @version 1.0, 2007/04/11
  */
-public class ExceededSizeException extends IOException {
+public class ExceededSizeException extends RuntimeException {
 
   /**
    * Constructs a new ExceededSizeException with no detail message.
