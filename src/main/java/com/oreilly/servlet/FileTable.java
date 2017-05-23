@@ -2,7 +2,6 @@ package com.oreilly.servlet;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 装载文件的table
@@ -15,12 +14,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  */
 class FileTable {
-    private transient final AtomicInteger repeatName = new AtomicInteger(-1);
-    private transient final Hashtable<String, UploadedFile> table;
-
-    public FileTable() {
-        table = new Hashtable<String, UploadedFile>();
-    }
+	
+    private int index = 0;
+    private Hashtable<String, UploadedFile> table = new Hashtable<String, UploadedFile>();
 
     /**
      * put
@@ -29,10 +25,8 @@ class FileTable {
      * @return boolean
      */
     public UploadedFile put(String key, UploadedFile value) {
-        boolean exists = table.containsKey(key);
-        if (exists) {
-            String keyRepeat = key + "_" + repeatName.incrementAndGet();
-            return table.put(keyRepeat, value);
+        if (table.containsKey(key)) {
+            key = key + "_" + (index++);
         }
         return table.put(key, value);
     }
