@@ -1,7 +1,9 @@
 package com.oreilly.servlet;
 
+import java.util.Collections;
 import java.util.Enumeration;
-import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.Set;
 
 /**
  * 装载文件的table
@@ -16,7 +18,7 @@ import java.util.Hashtable;
 class FileTable {
 	
     private int index = 0;
-    private Hashtable<String, UploadedFile> table = new Hashtable<String, UploadedFile>();
+    private LinkedHashMap<String, UploadedFile> map = new LinkedHashMap<String, UploadedFile>();
 
     /**
      * put
@@ -25,10 +27,10 @@ class FileTable {
      * @return boolean
      */
     public UploadedFile put(String key, UploadedFile value) {
-        if (table.containsKey(key)) {
+        if (map.containsKey(key)) {
             key = key + "_" + (index++);
         }
-        return table.put(key, value);
+        return map.put(key, value);
     }
 
     /**
@@ -37,7 +39,7 @@ class FileTable {
      * @return List
      */
     public UploadedFile get(String key) {
-        return table.get(key);
+        return map.get(key);
     }
 
     /**
@@ -45,7 +47,14 @@ class FileTable {
      * @return key 集合
      */
     public Enumeration<String> keys() {
-        return table.keys();
+    	return Collections.enumeration(map.keySet());
     }
-
+    
+    /**
+     * jfinal 3.2 以及后续版本使用该方法来取出上传文件的文件名
+     * 避免构造 Enumeration 对象
+     */
+    public Set<String> getFileNameSet() {
+    	return map.keySet();
+    }
 }
