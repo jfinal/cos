@@ -332,6 +332,14 @@ public class MultipartRequest {
   public Enumeration getFileNames() {
     return files.keys();
   }
+  
+  /**
+   * jfinal 3.2 以及后续版本使用该方法来取出上传文件的文件名
+   * 避免构造 Enumeration 对象
+   */
+  public java.util.Set<String> getFileNameSet() {
+	  return files.getFileNameSet();
+  }
 
   /**
    * Returns the value of the named parameter as a String, or null if 
