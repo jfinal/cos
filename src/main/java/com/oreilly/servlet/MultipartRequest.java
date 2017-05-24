@@ -71,7 +71,7 @@ public class MultipartRequest {
 
   protected Hashtable parameters = new Hashtable();  // name - Vector of values
   // protected Hashtable files = new Hashtable();       // name - UploadedFile
-  protected FileTable files = new FileTable();       // name - UploadedFile
+  protected FileMap files = new FileMap();       // name - UploadedFile
 
   /**
    * Constructs a new MultipartRequest to handle the specified request, 

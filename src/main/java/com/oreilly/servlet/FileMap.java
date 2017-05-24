@@ -15,7 +15,7 @@ import java.util.Set;
  * @author L.cm
  *
  */
-class FileTable {
+class FileMap {
 	
     private int index = 0;
     private LinkedHashMap<String, UploadedFile> map = new LinkedHashMap<String, UploadedFile>();
